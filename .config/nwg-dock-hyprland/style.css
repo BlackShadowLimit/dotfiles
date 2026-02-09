@@ -1,0 +1,72 @@
+@define-color glass_bg rgba(15, 15, 15, 0.85);
+@define-color border_color rgba(255, 255, 255, 0.35);
+/* 降低透明度：白色底再透明一點 (從 0.1 降到 0.06) */
+@define-color hover_bg rgba(255, 255, 255, 0.06); 
+@define-color text_main #ffffff;
+
+* {
+    font-family: "JetBrains Mono";
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: transparent;
+}
+
+#box {
+    background-color: @glass_bg;
+    border: 1px solid @border_color;
+    border-radius: 20px;
+    padding: 6px 10px;
+    margin: 0px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    margin: 0 4px;
+    /* 這裡要設為透明，否則 hover 時邊框跳出來會造成按鈕抖動 */
+    border-top: 1px solid transparent; 
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* -----------------------------------------------------
+ * 關鍵修正：模仿 Rofi 的選取效果
+ * 只在上方顯示細白邊，底色更透明
+ * ----------------------------------------------------- */
+button:hover {
+    background-color: @hover_bg;
+    
+    /* 只顯示上邊框：1px 寬度，顏色比主邊框再亮一點點 */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    
+    /* 這裡將圓角調平一點，讓頂部白線看起來更直挺，更有玻璃切面感 */
+    border-radius: 10px; 
+}
+
+tooltip, menu {
+    background-color: @glass_bg;
+    border: 1px solid @border_color;
+    border-radius: 12px;
+    padding: 10px;
+    color: @text_main;
+}
+
+menuitem {
+    padding: 5px;
+    border-radius: 8px;
+    border-top: 1px solid transparent;
+}
+
+menuitem:hover {
+    background-color: @hover_bg;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}

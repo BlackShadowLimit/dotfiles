@@ -1,0 +1,9 @@
+%YAML 1.3
+---
+- Key: [Left Tilt, pressed]
+- Execute: /home/arthur/.local/bin/ws-prev.sh
+...
+---
+- Key: [Right Tilt, pressed]
+- Execute: /home/arthur/.local/bin/ws-next.sh
+...

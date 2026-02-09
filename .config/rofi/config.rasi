@@ -1,0 +1,10 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    display-drun: " ";
+    display-run: "󰁔 ";
+    display-window: "󱂬 ";
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+}
+@theme "~/.config/rofi/glasslight.rasi"
