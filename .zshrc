@@ -59,6 +59,9 @@ alias ls='ls --color=auto'
 
 bindkey '^I' autosuggest-accept
 
+# Setting ssh agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # Quick alias
 alias jf='cd ~'
 alias config='cd ~/.config && nvim'
